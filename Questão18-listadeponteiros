@@ -1,1 +1,53 @@
+#include <stdio.h>
 
+void multiplica_matrizes(int* A, int* B, int* C, int linhasA, int colunasA, int colunasB) {
+    int i, j, k;
+    int soma;
+
+    for (i = 0; i < linhasA; i++) {
+        for (j = 0; j < colunasB; j++) {
+            soma = 0;
+            for (k = 0; k < colunasA; k++) {
+                soma += *(A + i*colunasA + k) * *(B + k*colunasB + j);
+            }
+            *(C + i*colunasB + j) = soma;
+        }
+    }
+}
+
+int main() {
+    int A[2][3] = {{1,2,3}, {4,5,6}};
+    int B[3][4] = {{7,8,9,10}, {11,12,13,14}, {15,16,17,18}};
+    int C[2][4];
+
+    int* pA = &A[0][0];
+    int* pB = &B[0][0];
+    int* pC = &C[0][0];
+
+    multiplica_matrizes(pA, pB, pC, 2, 3, 4);
+
+    printf("Matriz A:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", A[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    printf("Matriz B:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 4; j++) {
+            printf("%d ", B[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    printf("Matriz C (resultado da multiplicação AxB):\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 4; j++) {
+            printf("%d ", C[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
