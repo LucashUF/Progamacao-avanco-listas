@@ -1,1 +1,15 @@
+/*
+Resposta:
+  Para medir o tempo de execução de duas implementações de algoritmos de ordenação, podemos modificar o código para incluir as chamadas
+  das funções clock() ou time() antes e depois da rotina de ordenação.
 
+  Após a medição, podemos comparar os tempos de execução das duas implementações de ordenação para determinar qual é mais eficiente.
+No entanto, é importante lembrar que os tempos de execução podem variar dependendo do tamanho do array de entrada, da distribuição dos
+valores no array e das características do computador em que o programa está sendo executado. Portanto, é importante realizar várias 
+medições com diferentes tamanhos de entrada e repetir as medições várias vezes para obter resultados confiáveis.
+
+  Deste modo, se uma implementação de algoritmo de ordenação é mais eficiente em termos de tempo de execução, podemos concluir que ela 
+será mais adequada para lidar com arrays maiores e pode ser preferida em aplicações que requerem desempenho máximo. No entanto, se a 
+diferença de tempo de execução entre as duas implementações é pequena, outros fatores, como a facilidade de manutenção do código e a
+clareza, podem ser considerados ao escolher qual implementação usar.
+*/
